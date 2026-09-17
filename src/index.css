@@ -1,0 +1,400 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ==========================================================================
+   STANDARDIZED ICON CONTAINERS & MICRO-TYPOGRAPHY (FASE 1 AUDITORÍA)
+   ========================================================================== */
+
+/* Unified icon boxes maintaining optical alignment */
+.icon-box-xl {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box-lg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box-md {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box-sm {
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box-xs {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Micro-badges with verified minimum readable scale (11.5px) */
+.micro-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* Dark mode text boost for secondary & caption text */
+.dark p, .dark span, .dark li {
+  color-scheme: dark;
+}
+
+/* Global focus-visible accessibility ring for all interactive elements */
+:focus-visible {
+  outline: 3px solid #7c3aed !important;
+  outline-offset: 3px !important;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}
+
+/* ==========================================================================
+   MODO LECTURA SIMPLIFICADO & ALTO CONTRASTE (ACCESIBILIDAD VISUAL)
+   ========================================================================== */
+
+.simplified-reading {
+  letter-spacing: 0.015em;
+  line-height: 1.7 !important;
+}
+
+/* Enforce high-visibility keyboard focus in simplified reading mode */
+html:not(.dark) .simplified-reading :focus-visible {
+  outline: 4px solid #000000 !important;
+  outline-offset: 3px !important;
+  background-color: #fef08a !important;
+  color: #000000 !important;
+}
+
+html.dark .simplified-reading :focus-visible {
+  outline: 4px solid #ffffff !important;
+  outline-offset: 3px !important;
+  background-color: #4338ca !important;
+  color: #ffffff !important;
+}
+
+/* Disable all decorative blurs, gradients, transitions & distracting animations */
+.simplified-reading * {
+  animation: none !important;
+  transition: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.simplified-reading .blur-3xl,
+.simplified-reading .blur-2xl,
+.simplified-reading .blur-xl,
+.simplified-reading .blur-lg,
+.simplified-reading .backdrop-blur-md,
+.simplified-reading .backdrop-blur-sm,
+.simplified-reading .animate-pulse,
+.simplified-reading .animate-bounce {
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Light Theme - High Contrast Overrides */
+html:not(.dark) .simplified-reading {
+  background-color: #f8fafc !important;
+  color: #000000 !important;
+}
+
+html:not(.dark) .simplified-reading header {
+  background-color: #ffffff !important;
+  border-bottom: 2px solid #0f172a !important;
+}
+
+html:not(.dark) .simplified-reading section,
+html:not(.dark) .simplified-reading .bg-white,
+html:not(.dark) .simplified-reading .bg-slate-50,
+html:not(.dark) .simplified-reading .bg-purple-50,
+html:not(.dark) .simplified-reading .bg-indigo-50,
+html:not(.dark) .simplified-reading .bg-emerald-50,
+html:not(.dark) .simplified-reading .bg-red-50,
+html:not(.dark) .simplified-reading .bg-amber-50 {
+  background: #ffffff !important;
+  background-image: none !important;
+  border: 2px solid #1e293b !important;
+}
+
+html:not(.dark) .simplified-reading p,
+html:not(.dark) .simplified-reading span,
+html:not(.dark) .simplified-reading li {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .simplified-reading .text-slate-400,
+html:not(.dark) .simplified-reading .text-slate-500,
+html:not(.dark) .simplified-reading .text-slate-600,
+html:not(.dark) .simplified-reading .text-purple-600,
+html:not(.dark) .simplified-reading .text-purple-700,
+html:not(.dark) .simplified-reading .text-indigo-600,
+html:not(.dark) .simplified-reading .text-indigo-700 {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+html:not(.dark) .simplified-reading h1,
+html:not(.dark) .simplified-reading h2,
+html:not(.dark) .simplified-reading h3,
+html:not(.dark) .simplified-reading h4,
+html:not(.dark) .simplified-reading strong {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* Dark Theme - High Contrast Overrides */
+html.dark .simplified-reading {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+}
+
+html.dark .simplified-reading header {
+  background-color: #09090b !important;
+  border-bottom: 2px solid #ffffff !important;
+}
+
+html.dark .simplified-reading section,
+html.dark .simplified-reading .dark\:bg-slate-900,
+html.dark .simplified-reading .dark\:bg-slate-800,
+html.dark .simplified-reading .dark\:bg-slate-850,
+html.dark .simplified-reading .dark\:bg-purple-950,
+html.dark .simplified-reading .dark\:bg-indigo-950,
+html.dark .simplified-reading .dark\:bg-red-950 {
+  background: #18181b !important;
+  background-image: none !important;
+  border: 2px solid #ffffff !important;
+}
+
+html.dark .simplified-reading p,
+html.dark .simplified-reading span,
+html.dark .simplified-reading li {
+  color: #f8fafc !important;
+}
+
+html.dark .simplified-reading .text-slate-400,
+html.dark .simplified-reading .text-slate-500,
+html.dark .simplified-reading .text-slate-600,
+html.dark .simplified-reading .text-purple-300,
+html.dark .simplified-reading .text-purple-400,
+html.dark .simplified-reading .text-indigo-300,
+html.dark .simplified-reading .text-indigo-400 {
+  color: #f8fafc !important;
+  font-weight: 600 !important;
+}
+
+html.dark .simplified-reading h1,
+html.dark .simplified-reading h2,
+html.dark .simplified-reading h3,
+html.dark .simplified-reading h4,
+html.dark .simplified-reading strong {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   MOBILE SCROLL SNAP SYSTEM (CENTRALIZACIÓN ERGONÓMICA EN MÓVILES)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 4.75rem;
+    scroll-padding-bottom: 5.5rem;
+    scroll-behavior: smooth;
+  }
+
+  .mobile-snap-container {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 4.75rem;
+    scroll-padding-bottom: 5.5rem;
+  }
+
+  .mobile-snap-center {
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+  }
+}
+
+/* ==========================================================================
+   GLASSMORFISM & VISUAL HIERARCHY (MODO CLARO LILA Y MODO NOCHE NEÓN SUTIL)
+   ========================================================================== */
+
+.glass-header {
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(233, 213, 255, 0.6);
+  box-shadow: 0 4px 20px -2px rgba(126, 34, 206, 0.04);
+}
+
+.dark .glass-header {
+  background-color: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.22);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4), 0 1px 0 0 rgba(255, 255, 255, 0.04);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(233, 213, 255, 0.7);
+  box-shadow: 0 4px 20px -2px rgba(126, 34, 206, 0.04), 0 1px 3px -1px rgba(0, 0, 0, 0.03);
+}
+
+.dark .glass-card {
+  background-color: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.glass-subcard {
+  background-color: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(233, 213, 255, 0.55);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.03);
+}
+
+.dark .glass-subcard {
+  background-color: rgba(30, 41, 59, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.20);
+  box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   SKELETON SCREEN (PANTALLA DE CARGA CON GRADIENTES ANIMADOS)
+   ========================================================================== */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(241, 245, 249, 0.85) 0%,
+    rgba(237, 233, 254, 0.65) 25%,
+    rgba(245, 243, 255, 0.95) 50%,
+    rgba(237, 233, 254, 0.65) 75%,
+    rgba(241, 245, 249, 0.85) 100%
+  );
+  background-size: 250% 100%;
+  animation: shimmer 1.8s infinite linear;
+}
+
+.dark .skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 41, 59, 0.85) 0%,
+    rgba(51, 65, 85, 0.5) 25%,
+    rgba(88, 28, 135, 0.3) 50%,
+    rgba(51, 65, 85, 0.5) 75%,
+    rgba(30, 41, 59, 0.85) 100%
+  );
+  background-size: 250% 100%;
+  animation: shimmer 1.8s infinite linear;
+}
+
+/* Accessibility: Disable shimmer animation if user prefers reduced motion or simplified reading */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer {
+    animation: none !important;
+    background: #e2e8f0 !important;
+  }
+  .dark .skeleton-shimmer {
+    background: #334155 !important;
+  }
+}
+
+.simplified-reading .skeleton-shimmer {
+  animation: none !important;
+  background: #e2e8f0 !important;
+}
+
+.dark.simplified-reading .skeleton-shimmer {
+  background: #334155 !important;
+}
+
+
+
+

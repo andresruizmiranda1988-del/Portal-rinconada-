@@ -1,0 +1,6 @@
+{
+  "name": "COSAM Rinconada San Ramón - Portal del Paciente",
+  "description": "Portal institucional y de orientación del Programa de Tratamiento en Adicciones de COSAM Rinconada (Comuna de San Ramón): equipo clínico, talleres, exámenes, retiro de fármacos, derechos, urgencias y asistente virtual.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

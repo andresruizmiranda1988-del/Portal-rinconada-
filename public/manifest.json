@@ -1,0 +1,19 @@
+{
+  "name": "COSAM Rinconada - Portal del Paciente",
+  "short_name": "COSAM Rinconada",
+  "description": "Portal interactivo de orientación clínica, talleres y red de urgencias del COSAM Rinconada San Ramón",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#7e22ce",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "health", "lifestyle"]
+}

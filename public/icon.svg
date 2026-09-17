@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="cosamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="50%" stop-color="#7e22ce" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#cosamGrad)" />
+  <g filter="url(#dropShadow)" transform="translate(106, 106) scale(1.25)">
+    <!-- Shield / Heart / Cross Composite -->
+    <path d="M120 20 C180 20, 220 50, 220 110 C220 180, 120 220, 120 220 C120 220, 20 180, 20 110 C20 50, 60 20, 120 20 Z" fill="#ffffff" opacity="0.95" />
+    <path d="M105 75 H135 V105 H165 V135 H135 V165 H105 V135 H75 V105 H105 Z" fill="#7e22ce" />
+  </g>
+</svg>
